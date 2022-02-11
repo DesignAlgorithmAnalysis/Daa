@@ -17,8 +17,18 @@ body {
     left: 50%;
     transform: translate(-50%,-50%);
 }
+.footer {
+    position: absolute;
+    top: 90%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
 
 h1 {
 	color: whitesmoke;
+	justify-content:right;
+}
+h4 {
+	color whitesmoke;
 	justify-content:right;
 }
