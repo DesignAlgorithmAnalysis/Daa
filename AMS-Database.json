@@ -1,0 +1,148 @@
+databaseAMS = [
+  {
+    name: 'ams1',
+    location: {
+      long: 33.765342,
+      lat: 73.873523
+    },
+    spokesperson: {
+      name: 'someone',
+      designation: 'Operation Manger',
+      contactNumber: '+923106166593',
+      contactEmail: 'someone@ams1.com'
+    },
+    email: 'hell@ams1.com',
+    website: 'ams1.com',
+    socialMedia: {
+      FaceBook: 'https://facebook.com/ams1',
+      Twitter: 'https://twitter.com/ams1',
+      Instagram: 'https://instagram.com/ams1'
+    },
+
+    //since a vendor could have multiple printers
+    //thus details about each printer as object in array accessed by .printer[i]
+    printer: [
+      {
+        location: {
+          long: 33.294239,
+          lat: 73.823468236
+        },
+        process: 'fdm',
+        type: 'cartisian',
+        model: 'DIY',
+        printVolume: {
+          x: 210,
+          y: 210,
+          z: 215,
+          unit: 'mm'
+        },
+        heatBed: {
+          is: true,
+          maxTemp: 30,
+          unit: 'C'
+        },
+        heatSpace: {
+          is: true,
+          maxTemp: 30,
+          unit: 'C'
+        },
+        extruder:{
+          count: 1,
+          model: 'E3D',
+          maxTemp: 220,
+          cooling: true,
+          nozzel: [0.4]
+        }
+      }
+    ]
+  },
+  {
+    name: 'ams2',
+    location: {
+      long: 33.968342,
+      lat: 73.890523
+    },
+    spokesperson: {
+      name: 'someone',
+      designation: 'Operation Manger',
+      contactNumber: '+923106986493',
+      contactEmail: 'someone@ams2.com'
+    },
+    email: 'hell@ams2.com',
+    website: 'ams2.com',
+    socialMedia: {
+      FaceBook: 'https://facebook.com/ams2',
+      Twitter: 'https://twitter.com/ams2',
+      Instagram: 'https://instagram.com/ams2'
+    },
+
+    //since a vendor could have multiple printers
+    //thus details about each printer as object in array accessed by .printer[i]
+    printer: [
+      {
+        location: {
+          long: 33.2678239,
+          lat: 73.823471236
+        },
+        process: 'fdm',
+        type: 'cartisian',
+        model: 'DIY',
+        printVolume: {
+          x: 210,
+          y: 210,
+          z: 215,
+          unit: 'mm'
+        },
+        heatBed: {
+          is: true,
+          maxTemp: 30,
+          unit: 'C'
+        },
+        heatSpace: {
+          is: false,
+          maxTemp: 30,
+          unit: 'C'
+        },
+        extruder:{
+          count: 1,
+          model: 'E3D',
+          maxTemp: 220,
+          cooling: true,
+          nozzel: [0.4]
+        }
+      },
+      {
+        location: {
+          long: 33.2678239,
+          lat: 73.823471236
+        },
+        process: 'fdm',
+        type: 'delta',
+        model: 'DIY',
+        printVolume: {
+          x: 210,
+          y: 210,
+          z: 510,
+          unit: 'mm'
+        },
+        heatBed: {
+          is: true,
+          maxTemp: 30,
+          unit: 'C'
+        },
+        heatSpace: {
+          is: false,
+          maxTemp: 30,
+          unit: 'C'
+        },
+        extruder:{
+          count: 1,
+          model: 'E3D',
+          maxTemp: 220,
+          cooling: true,
+          nozzel: [0.6,0.4]
+        }
+      }
+    ]
+  }
+];
