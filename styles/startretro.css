@@ -97,11 +97,11 @@ body div:last-child {
 }
 
 .p3 {
-  background-image: url("E:/Work/web/imgs/p3-pixel-t.png");
+  background-image: url("https://raw.githubusercontent.com/DesignAlgorithmAnalysis/DesignAlgorithmAnalysis.github.io/main/image/p3-pixel-t.png");
 }
 
 .openev {
-  background-image: url("E:/Work/web/imgs/OpenEV-t.png");
+  background-image: url("https://raw.githubusercontent.com/DesignAlgorithmAnalysis/DesignAlgorithmAnalysis.github.io/main/image/OpenEV-t.png");
 }
 
 @media only screen and (max-width: 500px) {
