@@ -6,128 +6,118 @@
   <title>Daa - Simple and Functional</title>
   <meta name="keywords" content="Daa, DAA, design, algorithm, dnalysis, system, design, designalgorithmanalysis, web, PWA, OpenEV, network, additive manufacturing, FEA, CAE">
   <meta name="description" content="Daa design and develope systems that delivers">
-  <!--link rel="stylesheet" href="./styles/modern-daa.css"-->
+  <link rel="stylesheet" href="./styles/modern-daa.css">
   <link rel="icon" type="image/x-icon" href="./image/faviconDAA.ico">
   <link rel="icon" href="./images/favicon.svg" sizes="any" type="image/svg+xml">
 </head>
-  <body>
+<body>
 
-    <div class="nav-bar">
-      <div class="nav-contact">
-        <a href="mailto:hello@designalgorithmanalysis.com">@</a>
+  <div class="bar">
+    <div class="logo-container">
+      <div class="logo"></div>
+    </div>
+    <div class="nav">
+      <a href="#services">Services</a>
+      <a href="#products">Products</a>
+      <a href="#about">About</a>
+    </div>
+  </div>
+
+  <div class="cover">
+    <div class="line">
+      System that Connects
+    </div>
+    <div class="sub-line">
+      Connect Your operations with Your Buisness
+    </div>
+  </div>
+
+  <div class="cases">
+    <div class="case left" id="web-based">
+      <div class="text">
+        <div class="line">
+          Web - Based Systems
+        </div>
+        <div class="sub-line">
+          Universal applications using power of web, 60% increase in users
+        </div>
       </div>
+      <div class="image"></div>
     </div>
 
-    <div class="cover">
-      <div class="catch-line">
-        Why Default?
+    <div class="case right" id="optimize-mechanics">
+      <div class="text">
+        <div class="line">
+          Optimize Mechanics
+        </div>
+        <div class="sub-line">
+          Test and Optimize products before manufacturing
+        </div>
       </div>
-      <div class="support-line">
-        Build Buisnesses to Scale without Slowing Down or Breaking Up
+      <div class="image"></div>
+    </div>
+  </div>
+
+  <div class="our-services" id="services">
+    <div class="line">
+      Our Services
+    </div>
+    <div class="services">
+      <div class="service" id="web-dev">
+        <div class="image"></div>
+        <div class="name">Web Development</div>
+      </div>
+
+      <div class="service" id="cae">
+        <div class="image"></div>
+        <div class="name">Finite Element Analysis</div>
+      </div>
+
+      <div class="service" id="dig-out">
+        <div class="image"></div>
+        <div class="name">Digital Outreach</div>
       </div>
     </div>
-  
-   <style>
-     
-     @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;900&display=swap');
+  </div>
 
-    a {
-      text-decoration: none;
-      color: inherit;
-    }
-     
-    body {
-      display: flex;
-      justify-content: space-evenly;
-      flex-direction: column;
-      font-family: 'Montserrat', sans-serif;
-      background-color: #F5F6F8;
-      color: #000000;
-      padding: 2%;
-      font-weight: 400;
-    }
+  <div class="our-products" id="products">
+    <div class="line">
+      Our Products
+    </div>
+    <div class="products">
+      <div class="product">
+        <a href="https://designalgorithmanalysis.com/P3/" class="image" id="P3">
+          <img src="./imgs/p.png" alt="">
+        </a>
+        <a href="https://designalgorithmanalysis.com/OpenEV/" class="image" id="OpenEV">
+          <img src="./imgs/O.png" alt="">
+        </a>
+      </div>
+    </div>
+  </div>
 
-    .nav-bar {
-      display: flex;
-      flex-direction: row;
-      justify-content: flex-end;
-      align-content: center;
-      font-size: 2em;
-      align-items: center;
-      flex-wrap: nowrap;
-      
-    }
+  <div class="about" id="about">
+    <div class="line">
+      About
+    </div>
+    <div class="sub-line">
+      We are an engineering group focused on designing and analyzing products and systems, making them <u>simple and functional</u>
+    </div>
+  </div>
 
-    .nav-bar div {
-      padding: 1% 5%;
-    }
+  <div class="outreach">
+    <a id="contact" href="mailto:hello@designalgorithmanalysis.com">
+      <div class="contact">Contact</div>
+    </a>
+    <div class="social-media">
+      <a href="https://www.linkedin.com/company/designalgorithmanalysis/">
+        <img src="./imgs/linkedin.png" id="linkedin"></img>
+      </a>
+      <a href="https://www.instagram.com/designalgorithmanalysis/">
+        <img src="./imgs/instagram.png" id="instagram"></img>
+      </a>
+    </div>
+  </div>
 
-    .nav-contact{
-      font-size: 0.9em;
-    }
-
-    .nav-bar .nav-contact a {
-      text-decoration: none;
-      color: inherit;
-    }
-
-    .catch-line {
-      font-size: 9em;
-      font-weight: 900;
-    }
-
-    .support-line {
-      font-size: 3em;
-    }
-     
-    @media only screen and (max-width: 500px) {
-      .catch-line {
-        font-size: 8em;
-      }
-
-      .support-line {
-        font-size: 2.5em;
-      }
-
-      .product-line {
-        font-size: 2.5em;
-      }
-    }
-
-    @media only screen and (max-width: 430px) {
-      .catch-line {
-        font-size: 7em;
-      }
-
-      .support-line {
-        font-size: 2em;
-      }
-
-      .product-nav-bar {
-        justify-content: space-around;
-      }
-    }
-
-    @media only screen and (max-width: 375px) {
-      .catch-line {
-        font-size: 6em;
-      }
-
-      .support-line {
-        font-size: 1.8em;
-      }
-    }
-
-    @media only screen and (max-width: 330px) {
-      .catch-line {
-        font-size: 5em;
-      }
-
-      .support-line {
-        font-size: 1.5em;
-      }
-    }
-   </style>
-    
-  </body>
+</body>
 </html>
