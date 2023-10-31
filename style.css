@@ -1,43 +1,104 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Megrim&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@100;200;300;400;500;600;700&family=Poppins:wght@100;200;300;400;500;600;700;800;900&family=Ubuntu:wght@300;400;500;700&display=swap');
 
-html {
-  height: 100%;
-  cursor: crosshair;
+:root {
+  --white: 255, 255, 255;
+  --black: 41, 41, 41;
+  --orange: 255, 166, 17;
+  --blue: 102, 92, 230;
+  --green: 45, 186, 58;
 }
+
 body {
-color: black;
-background: white;
-justify-content: center;
-align-content: center;
-padding: 1%;
+  background-color: rgb(var(--black));
+  width: 100wh;
+  height: 100vh;
+  margin: 0px;
+  color: rgb(var(--white));
+  font-family: 'Poppins', sans-serif;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5em;
 }
 
-a {
-  text-decoration-color: grey;
-  color: black;
+#title {
+  font-family: 'Ubuntu', sans-serif;
+  font-size: 1.5em;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-evenly;
+  gap: 0.5em;
 }
 
-.Menu{
-text-align: center;
-display: block;
-font-family: 'Megrim';
+#logo svg {
+  height: 2em;
 }
 
-.tab {
-  list-style-type: none;
-  font-size: 5em;
+#logo svg * {
+  fill: rgb(var(--orange));
 }
-/*.tab:hover {
-  font-weight: bold;
-}*/
 
-.content{
-  font-family: 'Montserrat', thin;
-  font-size: 0;
-  margin: auto;
-  max-width: 20em;
+#word {
+  font-size: 2.5em;
 }
-.tab:hover + .content {
-  font-size: 2em;
+
+#sub .chips {
+  display: flex;
+  flex-direction: row;
+  gap: 0.5em;
+}
+
+.cta {
+  --s: var(--white);
+  --p: var(--blue);
+  --t: var(--white);
+
+  color: rgb(var(--s));
+  outline: 1px solid rgb(var(--p));
+  font-family: 'IBM Plex Mono', monospace;
+  cursor: pointer;
+
+  border-radius: 3px;
+  padding: 5px 7px;
+}
+
+.cta:hover {
+  background-color: rgb(var(--p));
+  color: rgb(var(--t));
+}
+
+.cta.green {
+  --p: var(--green);
+}
+
+#push-notifications {
+  position: fixed;
+  bottom: 1em;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5em;
+}
+
+#push-notifications div#notification {
+  outline: 1px solid rgb(var(--orange));
+  color: rgb(var(--white));
+  padding: 5px 7px;
+  border-radius: 5px;
+  max-width: min(80vw, 300px);
+  text-align: center;
+}
+
+@media (max-width: 360px) {
+  #title {
+    font-size: 1.25em;
+  }
+}
+
+@media (min-width: 780px) {
+  #title {
+    font-size: 2.25em;
+  }
 }
