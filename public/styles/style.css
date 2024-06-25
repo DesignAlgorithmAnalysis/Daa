@@ -107,6 +107,7 @@ main section {
 }
 
 section#pitch {
+  flex-grow: 2;
   display: flex;
   flex-direction: column;
   place-content: center;
@@ -138,7 +139,7 @@ body:has(article) {
 }
 
 section.list {
-  flex-grow: 1;
+  flex-grow: 2;
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
@@ -151,10 +152,11 @@ section.list {
 section.list:not(:has(div)) {
   flex-grow: unset;
   width: auto;
+  padding-bottom: 0em;
 }
 
-main:not(section.list:not(:has(div))) section#pitch {
-  height: 100vh;
+main:not(:has(section.list > div)) section#pitch {
+  min-height: 100vh;
 }
 
 .card {
@@ -177,8 +179,16 @@ main:not(section.list:not(:has(div))) section#pitch {
 
   main section {
     width: 100%;
+  }
+
+  main:has(section.list > div) section#pitch {
     min-height: 60vh;
-  };
+  }
+
+  main:not(:has(section.list > div)) section#pitch {
+    min-height: 100vh;
+  }
+  
 
   .card {
     width: 90%;
