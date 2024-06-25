@@ -11,65 +11,84 @@
   <link rel="icon" href="./images/favicon.svg" sizes="any" type="image/svg+xml">
 </head>
 <body>
-  <div id="title">
+
     <div id="logo">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 284 139" fill="none">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 284 139" fill="none">
         <path
-          d="M61.1592 2.78C61.1592 1.24465 62.4038 0 63.9392 0H80.6192C82.1545 0 83.3992 1.24465 83.3992 2.78V136.22C83.3992 137.755 82.1545 139 80.6192 139H63.9392C62.4038 139 61.1592 137.755 61.1592 136.22V2.78Z"
-        />
-        <circle cx="41.7" cy="97.2999" r="41.7" />
+        d="M61.1592 2.78C61.1592 1.24465 62.4038 0 63.9392 0H80.6192C82.1545 0 83.3992 1.24465 83.3992 2.78V136.22C83.3992 137.755 82.1545 139 80.6192 139H63.9392C62.4038 139 61.1592 137.755 61.1592 136.22V2.78Z"
+        ></path>
+        <circle cx="41.7" cy="97.2999" r="41.7"></circle>
         <path
-          d="M161.24 58.3799C161.24 56.8446 162.484 55.5999 164.02 55.5999H180.7C182.235 55.5999 183.48 56.8446 183.48 58.3799V136.22C183.48 137.755 182.235 139 180.7 139H164.02C162.484 139 161.24 137.755 161.24 136.22V58.3799Z"
-        />
-        <circle cx="141.781" cy="97.2999" r="41.7" />
+        d="M161.24 58.3799C161.24 56.8446 162.484 55.5999 164.02 55.5999H180.7C182.235 55.5999 183.48 56.8446 183.48 58.3799V136.22C183.48 137.755 182.235 139 180.7 139H164.02C162.484 139 161.24 137.755 161.24 136.22V58.3799Z"
+        ></path>
+        <circle cx="141.781" cy="97.2999" r="41.7"></circle>
         <path
-          d="M261.32 58.3799C261.32 56.8446 262.565 55.5999 264.1 55.5999H280.78C282.316 55.5999 283.56 56.8446 283.56 58.3799V136.22C283.56 137.755 282.316 139 280.78 139H264.1C262.565 139 261.32 137.755 261.32 136.22V58.3799Z"
-        />
-        <circle cx="241.861" cy="97.2999" r="41.7" />
-      </svg>
+        d="M261.32 58.3799C261.32 56.8446 262.565 55.5999 264.1 55.5999H280.78C282.316 55.5999 283.56 56.8446 283.56 58.3799V136.22C283.56 137.755 282.316 139 280.78 139H264.1C262.565 139 261.32 137.755 261.32 136.22V58.3799Z"
+        ></path>
+        <circle cx="241.861" cy="97.2999" r="41.7"></circle>
+    </svg>
     </div>
-    <div id="word">systems</div>
-  </div>
   
-  <div id="sub">
-    <div class="chips">
-      <div id="engine" class="cta">Engine</div>
-  
-      <div id="github" class="cta green">GitHub</div>
-    </div>
-  </div>
-  
-  <div id="push-notifications"></div>
+    <main>
 
+        <section id="pitch">
+            <h1 class="title">Simple&<br />Functional</h1>
+            <div class="CTAs">
+            <a class="CTA" href="https://github.com/itisdaa/">
+                <span>GitHub</span>
+                <span class="material-symbols-outlined">
+                    arrow_outward
+                </span>
+            </a>
+            <a class="CTA" href="" disable>
+                <span>Engine</span>
+                <span class="material-symbols-outlined">
+                    arrow_outward
+                </span>
+            </a>
+            </div>
+        </section>
+
+        <section id="articles" class="list"></section>
+
+        <template id="card">
+            <div class="card article">
+            <div class="card-description">
+                <p class="preview"></p>
+                <a href="" class="CTA">
+                    <span>Read More</span>
+                    <span class="material-symbols-outlined">
+                        arrow_outward
+                    </span>
+                </a>
+            </div>
+            </div>
+        </template>
+
+    </main>
+
+  
   <script>
-    const toEngineAction = document.querySelector('.cta#engine');
-    const toGithubAction = document.querySelector('.cta#github');
-    
-    toEngineAction.onclick = () => {
-      pushNotification('Engine is Coming Soon ✨', 3000);
-    };
-    
-    toGithubAction.onclick = () => {
-      window.open('https://github.com/itisdaa/', 'blank');
-    };
-    
-    function pushNotification(message, interval) {
-      // Create the div#notification element with the text content = message
-      interval = interval ? interval : 500;
-      const notification = document.createElement('div');
-      notification.textContent = message;
-      notification.id = 'notification';
-    
-      // Append div#notification element into section#push-notification
-      const pushNotificationSection = document.getElementById('push-notifications');
-      pushNotificationSection.appendChild(notification);
-    
-      // Remove the appended element after 10 seconds
-      setTimeout(() => {
-        notification.remove();
-      }, interval);
-    }
+        (async () => {
+            const response = await fetch('/articles');
+            const data = await response.json();
+            data.forEach(async (article) => {
+                const name = article.split('.')[0];
+                const previewResponse = await fetch(`/${name}?preview="0:2"`);
+                const previewText = await previewResponse.text();
 
-  </script>
+                const clone = document.querySelector('template#card').content.cloneNode(true);
+                const card = clone.querySelector('div.card');
+
+                //card.querySelector('h2').textContent = name;
+                card.querySelector('a').href = `./${name}`;
+                card.querySelector('.preview').innerHTML = previewText;
+                
+                document.querySelector('.list').appendChild(card);
+            });
+        })()
+    </script>
+
+</body>
 </body>
 </html>
