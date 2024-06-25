@@ -57,14 +57,14 @@ body {
 }
 
 ::-webkit-scrollbar {
-  width: calc(0.35rem * var(--size));
-  height: calc(0.35rem * var(--size));
+  width: calc(0.1rem * var(--size));
+  height: calc(0.1rem * var(--size));
 }
 ::-webkit-scrollbar-track {
   background: rgba(var(--highlight-text), 0.7);
 }
 ::-webkit-scrollbar-thumb {
-  border-radius: calc(0.35rem * var(--size));
+  border-radius: calc(0.1rem * var(--size));
   background: rgba(var(--highlight-bg), 0.45);
 }
 ::-webkit-scrollbar-thumb:hover {
