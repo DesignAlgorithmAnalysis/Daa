@@ -153,6 +153,10 @@ section.list:not(:has(div)) {
   width: auto;
 }
 
+main:not(section.list:not(:has(div))) section#pitch {
+  height: 100vh;
+}
+
 .card {
   width: 75%;
   max-width: 300px;
